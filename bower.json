@@ -1,0 +1,23 @@
+{
+  "name": "revolt.objects.media",
+  "homepage": "https://github.com/revolt-framework/objects.media",
+  "authors": [
+    {
+      "name": "Ruven Pelka",
+      "email": "ruven.pelka@gmail.com",
+      "homepage": "http://ruvenpelka.com"
+    }
+  ],
+  "description": "Revolt framework's media object.",
+  "main": "_objects.media.scss",
+  "keywords": [
+    "revolt",
+    "oocss",
+    "css"
+  ],
+  "dependencies": {
+    "revolt.settings.defaults": "0.x.x",
+    "revolt.tools.functions": "0.x.x"
+  },
+  "license": "MIT"
+}

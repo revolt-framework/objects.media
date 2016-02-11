@@ -1,0 +1,230 @@
+//
+// REVOLT!
+// OBJECTS.MEDIA
+//
+// Place any image- and text-like content side-by-side.
+//
+
+
+
+// Predefine the variables below to alter and enable specific features.
+
+$revo-media-namespace:          $revo-objects-namespace !default;
+
+$revo-enable-media--tiny:       $revo-auto-enable !default;
+$revo-enable-media--small:      $revo-auto-enable !default;
+$revo-enable-media--large:      $revo-auto-enable !default;
+$revo-enable-media--huge:       $revo-auto-enable !default;
+$revo-enable-media--center:     $revo-auto-enable !default;
+$revo-enable-media--reverse:    $revo-auto-enable !default;
+$revo-enable-media--flush:      $revo-auto-enable !default;
+
+$revo-media-gutter:             $revo-spacer-x !default;
+$revo-media-gutter--tiny:         quarter($revo-media-gutter) !default;
+$revo-media-gutter--small:          halve($revo-media-gutter) !default;
+$revo-media-gutter--large:         double($revo-media-gutter) !default;
+$revo-media-gutter--huge:       quadruple($revo-media-gutter) !default;
+
+
+
+.#{$revo-list-bare-namespace}media,
+%#{$revo-list-bare-namespace}media {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+.#{$revo-list-bare-namespace}media__figure,
+%#{$revo-list-bare-namespace}media__figure {
+    margin-right: $revo-media-gutter;
+}
+
+
+
+.#{$revo-list-bare-namespace}media__body,
+%#{$revo-list-bare-namespace}media__body {
+    flex: 1;
+
+    &,
+    :last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+
+
+// Tiny media object
+
+@if ($revo-enable-media--tiny == true) {
+
+    .#{$revo-list-bare-namespace}media--tiny,
+    %#{$revo-list-bare-namespace}media--tiny {
+
+        .#{$revo-list-bare-namespace}media__figure,
+        %#{$revo-list-bare-namespace}media__figure {
+            margin-right: $revo-media-gutter--tiny;
+        }
+
+        // Tiny reversed media object
+
+        &.#{$revo-list-bare-namespace}media--reverse,
+        &%#{$revo-list-bare-namespace}media--reverse {
+
+            > .#{$revo-list-bare-namespace}media__figure,
+            > %#{$revo-list-bare-namespace}media__figure {
+                margin-left: $revo-media-gutter--tiny;
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+// Small media object
+
+@if ($revo-enable-media--small == true) {
+
+    .#{$revo-list-bare-namespace}media--small,
+    %#{$revo-list-bare-namespace}media--small {
+
+        .#{$revo-list-bare-namespace}media__figure,
+        %#{$revo-list-bare-namespace}media__figure {
+            margin-right: $revo-media-gutter--small;
+        }
+
+        // Small reversed media object
+
+        &.#{$revo-list-bare-namespace}media--reverse,
+        &%#{$revo-list-bare-namespace}media--reverse {
+
+            > .#{$revo-list-bare-namespace}media__figure,
+            > %#{$revo-list-bare-namespace}media__figure {
+                margin-left: $revo-media-gutter--small;
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+// Large media object
+
+@if ($revo-enable-media--large == true) {
+
+    .#{$revo-list-bare-namespace}media--large,
+    %#{$revo-list-bare-namespace}media--large {
+
+        .#{$revo-list-bare-namespace}media__figure,
+        %#{$revo-list-bare-namespace}media__figure {
+            margin-right: $revo-media-gutter--large;
+        }
+
+        // Large reversed media object
+
+        &.#{$revo-list-bare-namespace}media--reverse,
+        &%#{$revo-list-bare-namespace}media--reverse {
+
+            > .#{$revo-list-bare-namespace}media__figure,
+            > %#{$revo-list-bare-namespace}media__figure {
+                margin-left: $revo-media-gutter--large;
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+// Huge media object
+
+@if ($revo-enable-media--huge == true) {
+
+    .#{$revo-list-bare-namespace}media--huge,
+    %#{$revo-list-bare-namespace}media--huge {
+
+        .#{$revo-list-bare-namespace}media__figure,
+        %#{$revo-list-bare-namespace}media__figure {
+            margin-right: $revo-media-gutter--huge;
+        }
+
+        // Huge reversed media object
+
+        &.#{$revo-list-bare-namespace}media--reverse,
+        &%#{$revo-list-bare-namespace}media--reverse {
+
+            > .#{$revo-list-bare-namespace}media__figure,
+            > %#{$revo-list-bare-namespace}media__figure {
+                margin-left: $revo-media-gutter--huge;
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+// Centered media object
+
+@if ($revo-enable-media--center == true) {
+
+    .#{$revo-list-bare-namespace}media--center,
+    %#{$revo-list-bare-namespace}media--center {
+        align-items: center;
+    }
+
+}
+
+
+
+// Reverse media object
+
+@if ($revo-enable-media--reverse == true) {
+
+    .#{$revo-list-bare-namespace}media--reverse,
+    %#{$revo-list-bare-namespace}media--reverse {
+
+        > .#{$revo-list-bare-namespace}media__figure,
+        > %#{$revo-list-bare-namespace}media__figure {
+            order: 1;
+            margin-left: $revo-media-gutter;
+            margin-right: 0;
+        }
+
+    }
+
+}
+
+
+
+// Flush media object have no space between figure and body
+
+@if ($revo-enable-media--flush == true) {
+
+    .#{$revo-list-bare-namespace}media--flush,
+    %#{$revo-list-bare-namespace}media--flush {
+
+        > .#{$revo-list-bare-namespace}media__figure,
+        > %#{$revo-list-bare-namespace}media__figure {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    }
+
+}
